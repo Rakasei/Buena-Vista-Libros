@@ -1,2 +1,2 @@
 # Segunda-Entrega-del-Proyecto-Final
-Segunda Entrega del Proyecto Final del curso de Javascrypt de Coderhouse
+*Segunda entrega del proyecto final del curso de JavaScript de Coderhouse. Comisión 37520, año 2022.*
