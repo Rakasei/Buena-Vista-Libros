@@ -26,7 +26,24 @@ const mensaje = document.createElement('p')
 
 
 //Carrito
-let carrete
+let carrete = JSON.parse(localStorage.getItem('carrete')) || []
+
+if(localStorage.getItem('carrete')) {
+    mensaje.innerHTML = `
+    <strong>Seleccionaste los siguientes productos:
+    </strong> 
+    <em>${carrete}</em> 
+    `
+ mensajeHTML.append(mensaje)   
+} else {
+    document.querySelector("p").remove()
+
+    mensaje.innerHTML = ` <strong>El carrito está vacio.</strong> `
+ 
+ mensajeHTML.append(mensaje)
+} 
+
+/* let carrete
 if(localStorage.getItem('carrete')) {
     carrete = JSON.parse(localStorage.getItem('carrete'))
     mensaje.innerHTML = `
@@ -44,8 +61,7 @@ if(localStorage.getItem('carrete')) {
     mensaje.innerHTML = ` <strong>El carrito está vacio.</strong> `
  
  mensajeHTML.append(mensaje)
-}
-
+} */
 
 
 
