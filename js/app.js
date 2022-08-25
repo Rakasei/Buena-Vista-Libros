@@ -68,7 +68,7 @@ if(localStorage.getItem('carrete')) {
 
 
 const inyeccionJS = document.querySelector('#inyeccionJS')
-/* <img src="#" alt="" class="card-img-top" alt="..."> */
+
 //Generador de libros disponibles
 librosDisponibles.forEach((librosDisponibles) => {
     const itemLibro = document.createElement('div')
@@ -112,12 +112,18 @@ const eventoComprar = (dataDelEvento) => {
       document.querySelector("p").remove()
       carrete = []
       localStorage.clear()
-    mensaje.innerHTML = ` <strong>¡Gracias por tu compra! Tu carrito se vació.</strong>  ` 
+      swal("¡Gracias por tu compra!");
+    mensaje.innerHTML = ` <strong>Tu compra fue procesada con exito, tu carrito se vació.</strong>  ` 
  mensajeHTML.append(mensaje)
     }
  mensajeHTML.append(mensaje)
   }
   }
+
+
+
+
+
 
 
 const eventoAgregarCarrito = (dataDelEvento) => {
