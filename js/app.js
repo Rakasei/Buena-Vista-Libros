@@ -150,7 +150,7 @@ const eventoEliminar = (dataDelEvento) => {
 
 
 
-  fetch('json/productos.json')
+  fetch('data.json')
 
      .then ((response) => response.json())
 
