@@ -10,15 +10,7 @@ class libro {
     }
 }
 
-//Clase constructora libro aplicada en  variables const
-const obra1 = new libro ("El Principito", "Antoine de Saint-Exupéry", "El Gato de Hojalata", "Dura", 2015, 3000)
-const obra2 = new libro ("1984", "George Orwell", "Debolsillo", "Blanda", 2011, 2500)
-const obra3 = new libro ("Cien Años de Soledad", "Gabriel García Marquez", "Debolsillo", "Blanda", 2012, 2300)
-const obra4 = new libro ("Rayuela", "Julio Cortazar", "Alfaguara", "Blanda", 2017, 2400)
-const obra5 = new libro ("El Aleph", "Jorge Luis Borges", "Proa Editores", "Dura", 2010, 2700)
-
-
-const librosDisponibles = [obra1, obra2, obra3, obra4, obra5]
+let librosDisponibles = [/* obra1, obra2, obra3, obra4, obra5 */]
 
 const mensajeHTML = document.getElementById("mensajeServer")
 const mensaje = document.createElement('p')
@@ -70,6 +62,7 @@ if(localStorage.getItem('carrete')) {
 const inyeccionJS = document.querySelector('#inyeccionJS')
 
 //Generador de libros disponibles
+function librosDisponiblesRenderizar(librosDisponibles){
 librosDisponibles.forEach((librosDisponibles) => {
     const itemLibro = document.createElement('div')
     itemLibro.innerHTML = `<div class="cardProductos">
@@ -87,7 +80,7 @@ librosDisponibles.forEach((librosDisponibles) => {
     itemLibro.classList.add("col")
     inyeccionJS.append(itemLibro)
 }
-)
+)}
 
  //Botones carrito (linkeo DOM)
  const botonAgregarCarrito = document.querySelectorAll(".agregarCarrito")
@@ -143,15 +136,6 @@ const eventoAgregarCarrito = (dataDelEvento) => {
     }
 
 
-
-    /* submitButton.addEventListener('click', () => {
-      toDoList.push(input.value)
-      input.value = ''
-      localStorage.setItem('toDoList', JSON.stringify(toDoList))
-      console.log(toDoList)
-  })
-  
-  const toDoListGuardada = JSON.parse(localStorage.getItem('toDoList')) */
     
 
 const eventoEliminar = (dataDelEvento) => {
@@ -166,6 +150,19 @@ const eventoEliminar = (dataDelEvento) => {
 
 
 
+  fetch('json/productos.json')
+
+     .then ((response) => response.json())
+
+     .then ((data) => {
+        librosDisponibles = data
+        console.log(librosDisponibles);
+        librosDisponiblesRenderizar(librosDisponibles)
+     })
+     
+     .catch((error) => {
+        console.log(error)
+     })
 
 //Add Event Listener a cada botón carrito
 botonComprar.addEventListener("click", eventoComprar)
