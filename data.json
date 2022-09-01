@@ -1,5 +1,42 @@
-const obra1 = new libro ("El Principito", "Antoine de Saint-Exupéry", "El Gato de Hojalata", "Dura", 2015, 3000)
-const obra2 = new libro ("1984", "George Orwell", "Debolsillo", "Blanda", 2011, 2500)
-const obra3 = new libro ("Cien Años de Soledad", "Gabriel García Marquez", "Debolsillo", "Blanda", 2012, 2300)
-const obra4 = new libro ("Rayuela", "Julio Cortazar", "Alfaguara", "Blanda", 2017, 2400)
-const obra5 = new libro ("El Aleph", "Jorge Luis Borges", "Proa Editores", "Dura", 2010, 2700)
+[
+    {
+        "titulo": "El Principito",
+        "autor": "Antoine de Saint-Exupéry",
+        "editorial": "El Gato de Hojalata",
+        "tapa": "Dura",
+        "año": 2015,
+        "precio": 3000
+    },
+    {
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "editorial": "Debolsillo",
+        "tapa": "Blanda",
+        "año": 2011,
+        "precio": 2500
+    },
+    {
+        "titulo": "Cien Años de Soledad",
+        "autor": "Gabriel García Marquez",
+        "editorial": "Debolsillo",
+        "tapa": "Blanda",
+        "año": 2012,
+        "precio": 2300
+    },
+    {
+        "titulo": "Rayuela",
+        "autor": "Julio Cortazar",
+        "editorial": "Alfaguara",
+        "tapa": "Blanda",
+        "año": 2017,
+        "precio": 2400
+    },
+    {
+        "titulo": "El Aleph",
+        "autor": "Jorge Luis Borges",
+        "editorial": "Proa Editores",
+        "tapa": "Dura",
+        "año": 2010,
+        "precio": 2700
+    }
+]
