@@ -1,0 +1,5 @@
+const obra1 = new libro ("El Principito", "Antoine de Saint-Exupéry", "El Gato de Hojalata", "Dura", 2015, 3000)
+const obra2 = new libro ("1984", "George Orwell", "Debolsillo", "Blanda", 2011, 2500)
+const obra3 = new libro ("Cien Años de Soledad", "Gabriel García Marquez", "Debolsillo", "Blanda", 2012, 2300)
+const obra4 = new libro ("Rayuela", "Julio Cortazar", "Alfaguara", "Blanda", 2017, 2400)
+const obra5 = new libro ("El Aleph", "Jorge Luis Borges", "Proa Editores", "Dura", 2010, 2700)
