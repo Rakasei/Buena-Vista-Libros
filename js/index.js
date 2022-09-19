@@ -23,6 +23,7 @@ const actualizarCarrete = () => {
     precioTotal.innerText = carrete.reduce((acc, prod) => acc + prod.precio, 0)
 }
 
+//Carrito
 let carrete
 if (localStorage.getItem('carrete')) {
     carrete = JSON.parse(localStorage.getItem('carrete'))
