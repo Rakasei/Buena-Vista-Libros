@@ -17,7 +17,7 @@ const actualizarCarrete = () => {
         div.className = ("productoEnCarrete")
         div.innerHTML = `<p> ${libro.titulo} </p>
         <p>Precio:  $ ${libro.precio} </p>
-        <button onclick="eliminarDelCarrete(${libro.precio})">Eliminar</button>`
+        <button class="botones" id="botonELiminarDelCarrito">Eliminar</button>`
         mensajeHTML.appendChild(div)
     })
     precioTotal.innerText = carrete.reduce((acc, prod) => acc + prod.precio, 0)
@@ -43,26 +43,25 @@ if (localStorage.getItem('carrete')) {
 //Función que renderiza los libros actualmente en stock
 const renderizarLibrosDisponibles = () => {
 
-    librosDisponibles.forEach((libro) => {
+librosDisponibles.forEach((libro) => {
 
-        const itemLibro = document.createElement('div')
+    const itemLibro = document.createElement('div')
 
-        itemLibro.innerHTML = `
-        <div class="cardProductos">
-            <div class="card-body" id="containerInfo">
-                    <img src="${libro.img}" width="150px" height=200px" alt="...">
-                <div><h3 class ="h3TituloProductos">${libro.titulo}</h3>
+    itemLibro.innerHTML = `
+        <div class="card h-100" id="cardProductos" >
+            <img src="${libro.img}" width="150px" height=200px" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${libro.titulo}</h5>
                     <p class="card-text"><em>de ${libro.autor}</em></p>
                 </div>
-                <div class ="divBotonAgregarCarrito">
+            <div class ="divBotonAgregarCarrito">
                     <button class="agregarCarrito"  type="submit" data-id="${libro.id}">Agregar al carrito</button>
                     <span>$${libro.precio}</span>
-                </div>
             </div>
-        </div>`
+        </div>   `
 
-        itemLibro.classList.add("col")
-        inyeccionJS.append(itemLibro)
+    itemLibro.classList.add("col")
+    inyeccionJS.append(itemLibro)
 
     })
 

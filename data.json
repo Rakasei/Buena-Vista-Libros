@@ -48,5 +48,45 @@
         "año": 2010,
         "precio": 2700,
         "img": "../img/el_aleph.jpg"
+    },
+    {
+        "id": "6",
+        "titulo": "Flores Para Algernón",
+        "autor": "Daniel Keyes",
+        "editorial": "Alamut",
+        "tapa": "Blanda",
+        "año": 2022,
+        "precio": 2900,
+        "img": "../img/flores.jpg"
+    },
+    {
+        "id": "7",
+        "titulo": "Espejos: Una Historia Casi Universal",
+        "autor": "Eduardo Galeano",
+        "editorial": "Siglo XXI",
+        "tapa": "Dura",
+        "año": 2021,
+        "precio": 2400,
+        "img": "../img/espejos.jpg"
+    },
+    {
+        "id": "8",
+        "titulo": "Vigilar y Castigar",
+        "autor": "Michael Foucalt",
+        "editorial": "Siglo XXI",
+        "tapa": "Dura",
+        "año": 2008,
+        "precio": 2750,
+        "img": "../img/vigilar.jpg"
+    },
+    {
+        "id": "9",
+        "titulo": "El Principe",
+        "autor": "Nicolás Maquiavelo",
+        "editorial": "Longseller",
+        "tapa": "Dura",
+        "año": 2021,
+        "precio": 2100,
+        "img": "../img/el_principe.jpg"
     }
 ]
