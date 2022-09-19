@@ -17,11 +17,14 @@ const actualizarCarrete = () => {
         div.className = ("productoEnCarrete")
         div.innerHTML = `<p> ${libro.titulo} </p>
         <p>Precio:  $ ${libro.precio} </p>
-        <button class="botones" id="botonELiminarDelCarrito">Eliminar</button>`
+        <button onclick="eliminarDelCarrete(${libro.id})" class="botones" id="botonEliminarDelCarrete">Eliminar</button>`
         mensajeHTML.appendChild(div)
     })
     precioTotal.innerText = carrete.reduce((acc, prod) => acc + prod.precio, 0)
 }
+
+//Selector botón eliminar del carrito
+
 
 //Carrito
 let carrete
@@ -54,8 +57,8 @@ librosDisponibles.forEach((libro) => {
                     <h5 class="card-title">${libro.titulo}</h5>
                     <p class="card-text"><em>de ${libro.autor}</em></p>
                 </div>
-            <div class ="divBotonAgregarCarrito">
-                    <button class="agregarCarrito"  type="submit" data-id="${libro.id}">Agregar al carrito</button>
+            <div class ="divBotonAgregarCarrete">
+                    <button class="agregarCarrete"  type="submit" data-id="${libro.id}">Agregar al carrito</button>
                     <span>$${libro.precio}</span>
             </div>
         </div>   `
@@ -65,13 +68,15 @@ librosDisponibles.forEach((libro) => {
 
     })
 
-    document.querySelectorAll('.agregarCarrito').forEach(botoncito => {
+    document.querySelectorAll('.agregarCarrete').forEach(botoncito => {
         botoncito.addEventListener('click', renderizarInfoLibros)
 
     })
 }
 
 //Funciones
+
+
 function renderizarInfoLibros(e) {
     const libroIdSeleccionado = e.target.getAttribute("data-id")
     const libroSeleccionado = librosDisponibles.find((libro) => libro.id == libroIdSeleccionado)
@@ -121,11 +126,17 @@ const vaciarCarrete = () => {
 
 }
 
+const eliminarDelCarrete = (libroAEliminar) => {
+    const item = carrete.find((libro) => libro.id == libroAEliminar)
+    const indice = carrete.indexOf(item)
+    carrete.splice(indice, 1)
+    actualizarCarrete()}
 
 //Add Event Listeners
 
 botonComprar.addEventListener('click', realizarCompraCarrete)
 botonEliminar.addEventListener('click', vaciarCarrete)
+/* botonEliminarDelCarrete.addEventListener("click", eliminarDelCarrete)  */
 
 //Comunicación con Data.JSON 
 fetch('data.json')

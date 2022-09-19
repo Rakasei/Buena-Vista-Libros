@@ -130,14 +130,14 @@ margin-top: 1.5em;
   width: 20em;
 }
 
-.divBotonAgregarCarrito {
+.divBotonAgregarCarrete {
   display: flex;
   justify-content: end;
   margin-right: 0.4em;
   margin-bottom: 0.5em;
 }
 
-.agregarCarrito {
+.agregarCarrete {
  
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
   border: none;
@@ -148,7 +148,7 @@ margin-top: 1.5em;
 }
 
 
-.botonesCarrito {
+.botonesCarrete {
   display: flex;
   justify-content: end;
   gap: 0.8em;
@@ -169,6 +169,6 @@ margin-top: 1.5em;
   gap: 0.8em;
 }
 
-#botonEliminarDelCarrito{
+#botonEliminarDelCarrete{
 height: 1.5em;
 }
