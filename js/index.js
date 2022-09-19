@@ -6,18 +6,26 @@ const botonComprar = document.querySelector("#botonComprar");
 const botonEliminar = document.querySelector("#botonEliminar");
 const mensajeHTML = document.getElementById("mensajeServer");
 const inyeccionJS = document.querySelector('#inyeccionJS');
-const mensaje = document.createElement('p');
+const mensaje = document.createElement("p");
+const precioTotal = document.getElementById("precioTotal")
+
+const actualizarCarrete = () => {
+    mensajeHTML.innerHTML = ""
+    carrete.forEach((libro) =>{
+        const div = document.createElement("div")
+        div.className = ("productoEnCarrete")
+        div.innerHTML = `<p> ${libro.titulo} </p>
+        <p>Precio:  $ ${libro.precio} </p>
+        <button onclick="eliminarDelCarrete(${libro.precio})">Eliminar</button>`
+        mensajeHTML.appendChild(div)
+    })
+    precioTotal.innerText = carrete.reduce((acc, prod) => acc + prod.precio, 0)
+ }
 
 let carrete
 if(localStorage.getItem('carrete')) {
    carrete = JSON.parse(localStorage.getItem('carrete'))
-   mensaje.innerHTML = `
-   <strong>Seleccionaste los siguientes productos:
-   </strong> 
-   <em>${carrete}</em> 
-   `
-   
-mensajeHTML.append(mensaje)   
+   actualizarCarrete()  
 
 } else {
    carrete = []
@@ -67,21 +75,12 @@ function renderizarInfoLibros(e) {
     const libroIdSeleccionado = e.target.getAttribute("data-id")
     const libroSeleccionado = librosDisponibles.find((libro) => libro.id == libroIdSeleccionado)
     carrete.push(libroSeleccionado)
+    localStorage.setItem('carrete', JSON.stringify(carrete))
     actualizarCarrete()
     console.log(carrete);
 }
 
- const actualizarCarrete = () => {
-    mensajeHTML.innerHTML = ""
-    carrete.forEach((libro) =>{
-        const div = document.createElement("div")
-        div.className = ("productoEnCarrete")
-        div.innerHTML = `<p> ${libro.titulo} </p>
-        <p>Precio:  $ ${libro.precio} </p>
-        <button onclick="eliminarDelCarrete(${libro.precio})">Eliminar</button>`
-        mensajeHTML.appendChild(div)
-    })
- }
+ 
 const realizarCompraCarrete = () =>{
     if (carrete.length === 0) {
       
@@ -93,17 +92,24 @@ const realizarCompraCarrete = () =>{
      
       } else {
 
-        if (confirm("¿Realizar la compra? Tu total es de $(EN PROCESO)")){
+        if (confirm("¿Estás segur@ de realizar la compra?")){
 
-            document.querySelector("p").remove()
+           /*  document.querySelector("p").remove() */
 
             carrete = []
 
             localStorage.clear()
 
-          mensaje.innerHTML = ` <strong>¡Gracias por tu compra! Tu carrito se vació.</strong>  ` 
+            Swal.fire(
+                'Tu compra se realizó con éxito!',
+                'Pronto te enviaremos la información de tu factura',
+                'success'
+              )
 
-       mensajeHTML.append(mensaje)
+         /*  mensaje.innerHTML = ` <strong>¡Gracias por tu compra! Tu carrito se vació.</strong>  ` 
+
+       mensajeHTML.append(mensaje) */
+       actualizarCarrete()
        
         }
       }
@@ -116,16 +122,17 @@ const vaciarCarrete = () => {
   document.querySelector("p").remove()
   mensaje.innerHTML = `<strong>El carrito se vació.</strong>`
 mensajeHTML.append(mensaje)
+actualizarCarrete()
 
 }
 
 
-const eliminarDelCarrete = (libroAEliminar) => {
+/* const eliminarDelCarrete = (libroAEliminar) => {
     const item = carrete.find((libro) => libro.id == libroAEliminar)
     const indice = carrete.indexOf(item)
     carrete.splice(indice, 1)
     actualizarCarrete()
-}
+} */
 
 //Add Event Listeners
 //Selectores
