@@ -1,42 +1,52 @@
 [
-    {
+    {   
+        "id": "1",
         "titulo": "El Principito",
         "autor": "Antoine de Saint-Exupéry",
         "editorial": "El Gato de Hojalata",
         "tapa": "Dura",
         "año": 2015,
-        "precio": 3000
+        "precio": 3000,
+        "img": "../img/el_principito.jpg"
     },
     {
+        "id": "2",
         "titulo": "1984",
         "autor": "George Orwell",
         "editorial": "Debolsillo",
         "tapa": "Blanda",
         "año": 2011,
-        "precio": 2500
+        "precio": 2500,
+        "img": "../img/1984.jpg"
     },
     {
+        "id": "3",
         "titulo": "Cien Años de Soledad",
         "autor": "Gabriel García Marquez",
         "editorial": "Debolsillo",
         "tapa": "Blanda",
         "año": 2012,
-        "precio": 2300
+        "precio": 2300,
+        "img": "../img/Cien_años.jpg"
     },
     {
+        "id": "4",
         "titulo": "Rayuela",
         "autor": "Julio Cortazar",
         "editorial": "Alfaguara",
         "tapa": "Blanda",
         "año": 2017,
-        "precio": 2400
+        "precio": 2400,
+        "img": "../img/rayuela.jpg"
     },
     {
+        "id": "5",
         "titulo": "El Aleph",
         "autor": "Jorge Luis Borges",
         "editorial": "Proa Editores",
         "tapa": "Dura",
         "año": 2010,
-        "precio": 2700
+        "precio": 2700,
+        "img": "../img/el_aleph.jpg"
     }
 ]
