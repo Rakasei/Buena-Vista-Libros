@@ -119,10 +119,10 @@ const vaciarCarrete = () => {
     mensajeHTML.innerHTML = ""
     localStorage.clear()
     carrete = []
+    
     document.querySelector("p").remove()
     mensaje.innerHTML = `<strong>El carrito se vació.</strong>`
-    mensajeHTML.append(mensaje)
-    actualizarCarrete()
+    mensajeHTML.append(mensaje) 
 
 }
 
@@ -136,7 +136,6 @@ const eliminarDelCarrete = (libroAEliminar) => {
 
 botonComprar.addEventListener('click', realizarCompraCarrete)
 botonEliminar.addEventListener('click', vaciarCarrete)
-/* botonEliminarDelCarrete.addEventListener("click", eliminarDelCarrete)  */
 
 //Comunicación con Data.JSON 
 fetch('data.json')
